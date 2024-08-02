@@ -1,40 +1,23 @@
 package poo.ex16;
 
-import java.util.Random;
-import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Pessoa pessoa1 = new Pessoa("Pedro");
+        Livro livro1 = new Livro("Harry Potter", "J. K. Rowling", 1);
 
-        int op=10;
+        Emprestimo emprestimo = new Emprestimo(pessoa1, livro1);
+        Emprestimo emprestimo2 = new Emprestimo(pessoa1, livro1);
 
-        while(op != 0){
-            System.out.println("Digite a sua opção:");
-            op = sc.nextInt();
-
-            switch(op){
-                case 1:
-                    Pessoa p1 = criaPessoa();
-                    System.out.println(p1);
-            }
-        }
-
-        sc.close();
-    }
-    public static Pessoa criaPessoa(){
-        Scanner sc = new Scanner(System.in);
-        Random rd = new Random();
-
-        long id = rd.nextInt();
-
-        System.out.println("Digite o nome da pessoa:");
-        String nome = sc.nextLine();
-
-        Pessoa pessoa = new Pessoa(id, nome);
-
-        sc.close();
-        return pessoa;
+        emprestimo.aluga();
+        emprestimo.aluga();
+        emprestimo2.aluga();
+        emprestimo2.devolve();
+        emprestimo.devolve();
+        emprestimo.devolve();
+        System.out.println("\nPessoa: " + emprestimo.getPessoa().getNome());
+        System.out.println("Livro: " + emprestimo.getLivro().getTitulo());
+        System.out.println("Data de emprestimo: " + emprestimo.getDataEmprestimo());
+        System.out.println("Data de devolucao: " + emprestimo.getDataDevolucao());
     }
     
 }
