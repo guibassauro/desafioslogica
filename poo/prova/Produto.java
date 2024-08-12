@@ -1,14 +1,14 @@
 package poo.prova;
 
 public class Produto {
-    private int id;
-    private String nome;
-    private double preco;
-    private int quantidadeEstoque;
+    int id;
+    String nome;
+    double preco;
+    int quantidadeEmEstoque;
 
-    public Produto(int id, String nome, double preco, int quantidadeEstoque){
 
-    }
+
+    // Getters & Setters
 
     public int getId(){
         return id;
@@ -34,11 +34,18 @@ public class Produto {
         this.preco = preco;
     }
 
-    public int getQuantidadeEstoque(){
-        return quantidadeEstoque;
+    public int getQuantidadeEmEstoque(){
+        return quantidadeEmEstoque;
     }
 
-    public void setQuantidadeEstoque(int quantidadeEstoque){
-        this.quantidadeEstoque = quantidadeEstoque;
+    public void setQuantidadeEmEstoque(int quantidadeEmEstoque){
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
+    public Produto(int id, String nome, double preco, int quantidadeEmEstoque){
+        setId(id);
+        setNome(nome);
+        setPreco(preco);
+        setQuantidadeEmEstoque(quantidadeEmEstoque);
     }
 }

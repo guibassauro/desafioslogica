@@ -4,14 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    private List<Item> listaDeItens = new ArrayList<>();
-    private double valorTotalPedido;
+    List<Item> listaDeItens = new ArrayList<>();
+    double valorTotalDoPedido = 0;
 
-    public double getValorTotalPedido(){
-        return valorTotalPedido;
-    }
 
-    public void setValorTotalPedido(double valorTotalPedido){
-        this.valorTotalPedido = valorTotalPedido;
-    }
 }
