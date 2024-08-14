@@ -1,12 +1,10 @@
 package poo.prova;
 
 public class Produto {
-    int id;
-    String nome;
-    double preco;
-    int quantidadeEmEstoque;
-
-
+    private int id;
+    private String nome;
+    private double preco;
+    private int quantidadeEmEstoque;
 
     // Getters & Setters
 
