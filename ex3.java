@@ -19,25 +19,15 @@ public class ex3 {
         System.out.println(oponente2);
 
         if(op == oponente2){
-            System.out.println("Houve um empate");
-        } else if(op == 0){
-            if(oponente2 == 1){
-                System.out.println("Voce perdeu");
-            } else{
-                System.out.println("Voce ganhou");
-            }
-        } else if(op == 1){
-            if(oponente2 == 0){
-                System.out.println("Voce ganhou.");
-            } else{
-                System.out.println("Voce perdeu.");
-            }
+            System.out.println("Empate!");
+        } else if(op == 0 && oponente2 == 2){
+            System.out.println("Você venceu!");
+        } else if(op == 1 && oponente2 == 0){
+            System.out.println("Você Venceu!");
+        } else if(op == 2 && oponente2 == 1){
+            System.out.println("Você venceu!");
         } else{
-            if(oponente2 == 0){
-                System.out.println("Voce perdeu.");
-            } else{
-                System.out.println("Voce ganhou.");
-            }
-        }     
+            System.out.println("O oponente venceu!");
+        }
     }
 }

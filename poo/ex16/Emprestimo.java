@@ -11,8 +11,8 @@ public class Emprestimo {
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Emprestimo(Pessoa pessoa, Livro livro){
-        setPessoa(pessoa);
-        setLivro(livro);
+        this.pessoa = pessoa;
+        this.livro = livro;
         this.dataEmprestimo = null;
         this.dataDevolucao = null;
     }
@@ -24,9 +24,7 @@ public class Emprestimo {
             setDataEmprestimo("Livro não retirado");
             System.out.println("O livro " + this.getLivro().getTitulo() + " não tem copias disponíveis");
         } else{
-            System.out.println("O livro " + this.getLivro().getTitulo() + " foi alugado por " + this.getPessoa().getNome());
-            setDataEmprestimo(LocalDateTime.now().format(formatter).toString());
-            this.getLivro().alugaLivro();
+            this.alugaLivro();
         }
     }
 
@@ -37,26 +35,30 @@ public class Emprestimo {
         } else if(this.dataDevolucao != null){
             System.out.println("Este livro já foi devolvido");
         } else{
-            System.out.println("O livro " + this.getLivro().getTitulo() + " foi devolvido por " + this.getPessoa().getNome());
-            setDataDevolucao(LocalDateTime.now().format(formatter).toString());
-            this.getLivro().devolveLivro();
+            this.devolveLivro();
         }
+    }
+
+    public void alugaLivro(){
+        System.out.println("O livro " + this.getLivro().getTitulo() + 
+                           " foi alugado por " + this.getPessoa().getNome());
+        setDataEmprestimo(LocalDateTime.now().format(formatter).toString());
+        this.getLivro().setCopias(this.getLivro().getCopias() - 1);
+    }
+
+    public void devolveLivro(){
+        System.out.println("O livro " + this.getLivro().getTitulo() + 
+                           " foi devolvido por " + this.getPessoa().getNome());
+        setDataDevolucao(LocalDateTime.now().format(formatter).toString());
+        this.getLivro().setCopias(this.getLivro().getCopias() + 1);;
     }
 
     public Pessoa getPessoa(){
         return pessoa;
     }
 
-    public void setPessoa(Pessoa pessoa){
-        this.pessoa = pessoa;
-    }
-
     public Livro getLivro(){
         return livro;
-    }
-
-    public void setLivro(Livro livro){
-        this.livro = livro;
     }
 
     public String getDataEmprestimo(){

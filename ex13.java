@@ -18,9 +18,9 @@ public class ex13 {
     }
 
     public static double calculaNota(double parcial, double trimestral){
-        double ffinal = ((parcial * 0.4) + (trimestral * 0.6));
+        double notafinal = ((parcial * 0.4) + (trimestral * 0.6));
         
-        return ffinal;
+        return notafinal;
     }
 
     public static String analisaNota(double nota){

@@ -148,15 +148,7 @@ public class Pedido {
         }
     }
 
-    // Getters & Setters
-
     public double getValorTotalDoPedido(){
         return valorTotalDoPedido;
     }
-
-    public void setValorTotalDoPeDido(double valorTotalDoPedido){
-        this.valorTotalDoPedido = valorTotalDoPedido;
-    }
-
-
 }

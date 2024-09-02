@@ -7,13 +7,20 @@ class ex1 {
         System.out.println("Escreva a idade:");
         int idade = sc.nextInt();
 
-        if(idade < 18){
-            System.out.println("É menor de idade.");
-        } else{
-            System.out.println("É maior de idade.");
-        }
+        String resultado = verficarIdade(idade);
+        System.out.println(resultado);
 
         sc.close();
     }
+    
+    public static String verficarIdade(int idade){
+        if(idade >= 18){
+            return "É maior de idade";
+        } else{
+            return "É menor de idade";
+        }
+    }
+
+    
     
 }

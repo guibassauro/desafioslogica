@@ -5,28 +5,49 @@ public class ex10 {
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite um número:");
-        int quadrado = sc.nextInt();
-        int matriz[][] = new int[quadrado][quadrado];
+        int numero = getDados(sc);
 
-        for(int i=0; i<quadrado; i++){
-            for(int j=0; j<quadrado; j++){
-                System.out.println("Número em Matriz[" + i + "][" + j + "]:");
-                int num = sc.nextInt();
-                matriz[i][j] = num;
-            }
-        }
+        int matriz[][] = criaMatriz(numero, sc);
 
-        int soma = 0;
-        int j = 0;
-        for(int i=0; i<quadrado; i++){
-            int num = Integer.valueOf(matriz[i][j]);
-            soma += num;
-            j++;
-        }
+        int soma = calculaSomaDiagonal(matriz, numero);
 
-        System.out.println(soma);
-        
+        System.out.println("Soma da Diagonal da matriz: " + soma);
+
         sc.close();
+        
+    }
+
+    public static int getDados(Scanner sc){
+        System.out.println("Digite o valor matriz");
+        int numero = sc.nextInt();
+        
+        return numero;
+    }
+
+    public static int[][] criaMatriz(int numero, Scanner sc){
+
+        int matriz[][] = new int[numero][numero];
+
+        for(int i=0; i < Math.pow(numero, 2); i++){
+            int linha = i / numero;
+            int coluna = i % numero;
+
+            System.out.println("Elemento em: [" + linha + "] [" + coluna + "]:");
+            matriz[linha][coluna] = sc.nextInt();
+        }
+
+        return matriz;
+        
+    }
+
+    public static int calculaSomaDiagonal(int [][] matriz, int numero){
+        
+        int somaDiagonal  = 0;
+
+        for(int i=0; i < numero; i++){
+            somaDiagonal += matriz[i][i];
+        }
+
+        return somaDiagonal;
     }
 }

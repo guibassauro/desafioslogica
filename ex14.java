@@ -48,6 +48,6 @@ public class ex14{
     }
 
     public static void printHora(int segundos, int horasFull, int minutosFull, int segundosFull){
-        System.out.println(segundos + " segundos são " + horasFull + "h" + minutosFull + "min" + segundosFull + "seg.");
+        System.out.println(segundos + " segundos são " + horasFull + "h " + minutosFull + "min " + segundosFull + "seg.");
     }
 }

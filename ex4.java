@@ -13,6 +13,12 @@ public class ex4 {
         System.out.println("Digite a operação a ser feita:");
         String op = sc.next();
 
+        calcula(valor1, valor2, op);
+
+        sc.close();
+    }
+
+    public static void calcula(double valor1, double valor2, String op){
         switch (op) {
             case "+":
                 System.out.println(valor1 + valor2);
@@ -34,8 +40,6 @@ public class ex4 {
                 System.out.println("Digite um valor válido");
                 
         }
-
-        sc.close();
     }
     
 }

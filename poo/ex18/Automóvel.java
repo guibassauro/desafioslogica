@@ -9,30 +9,14 @@ public class Automóvel {
         return numRodas;
     }
 
-    public void setNumRodas(int numRodas){
-        this.numRodas = numRodas;
-    }
-
-    public Integer getVelMax(){
-        return velMax;
-    }
-
-    public void setVelMax(int velMax){
-        this.velMax = velMax;
-    }
-
-    public boolean getLigado(){
-        return ligado;
-    }
-
     public void setLigado(boolean ligado){
         this.ligado = ligado;
     }
 
     public Automóvel(int numRodas, int velMax){
-        setNumRodas(numRodas);
-        setVelMax(velMax);
-        setLigado(false);
+        this.numRodas = numRodas;
+        this.velMax = velMax;
+        this.ligado = false;
     }
 
     public void ligar(){

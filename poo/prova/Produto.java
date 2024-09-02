@@ -6,30 +6,16 @@ public class Produto {
     private double preco;
     private int quantidadeEmEstoque;
 
-    // Getters & Setters
-
     public int getId(){
         return id;
-    }
-
-    public void setId(int id){
-        this.id = id;
     }
 
     public String getNome(){
         return nome;
     }
 
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
     public double getPreco(){
         return preco;
-    }
-
-    public void setPreco(double preco){
-        this.preco = preco;
     }
 
     public int getQuantidadeEmEstoque(){
@@ -41,9 +27,9 @@ public class Produto {
     }
 
     public Produto(int id, String nome, double preco, int quantidadeEmEstoque){
-        setId(id);
-        setNome(nome);
-        setPreco(preco);
-        setQuantidadeEmEstoque(quantidadeEmEstoque);
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
 }

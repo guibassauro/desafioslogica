@@ -6,7 +6,7 @@ public class Moto  extends Automóvel{
     
     public Moto(int numRodas, int velMax){
         super(numRodas, velMax);
-        setAcelerador(false);
+        this.acelerador = false;
     }
 
     public boolean getAcelerador(){

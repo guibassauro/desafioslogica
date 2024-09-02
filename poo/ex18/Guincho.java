@@ -17,15 +17,15 @@ public class Guincho extends Automóvel{
     }
 
     public void guinchar(Automóvel guinchado){
-        if(this.guinchado != null){
+        if(this.getGuinchado() != null){
             System.out.println("Este guincho já está em uso");
         } else{
             if(guinchado.getNumRodas() == 2){
                 System.out.println("A moto foi guinchada");
-                setGuinchado(guinchado);
+                this.setGuinchado(guinchado);
             } else{
                 System.out.println("O carro foi guinchado");
-                setGuinchado(guinchado);
+                this.setGuinchado(guinchado);
             }
         }
     }

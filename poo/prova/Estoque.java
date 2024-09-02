@@ -91,10 +91,6 @@ public class Estoque {
         return false;
     }
 
-
-    // Getters & Setters
-
-
     public int getId(){
         return id;
     }
@@ -104,7 +100,7 @@ public class Estoque {
     }
 
     public Estoque(int id){
-        setId(id);
+        this.id = id;
         listaDeProdutos.clear();
     }
 }
