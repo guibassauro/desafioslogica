@@ -3,6 +3,14 @@ import java.util.Random;
 public class ex6 {
     public static void main(String[] args) {
         Random ranNum = new Random();
+
+        int[] valores = defineValores(ranNum);
+
+        printaDados(valores);
+        
+    }
+
+    private static int[] defineValores(Random ranNum){
         int maiorNum = -1;
         int menorNum = 101;
         
@@ -15,11 +23,13 @@ public class ex6 {
             if(num < menorNum){
                 menorNum = num;
             }
+        }      
 
-            System.out.print(num + " ");
-        }
-        System.out.print("\n");
-        System.out.println("Maior número: " + maiorNum);
-        System.out.println("Menor número: " + menorNum);
+        return new int[] {menorNum, maiorNum};
+    }
+
+    private static void printaDados(int[] valores){
+        System.out.println("Maior número: " + valores[1]);
+        System.out.println("Menor número: " + valores[0]);
     }
 }

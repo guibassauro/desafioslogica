@@ -3,18 +3,27 @@ import java.util.Scanner;
 public class ex13 {
     
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite quanto tirou na prova parcial");
-        double notaparcial = sc.nextInt();
-        System.out.println("Digite quanto tirou na prova trimestral");
-        double notatrimestral = sc.nextInt();
+        double[] notas = getDados();
+        double notaparcial = notas[0];
+        double notatrimestral = notas[1];
 
-        double notafinal =  calculaNota(notaparcial, notatrimestral);
+        double notafinal = calculaNota(notaparcial, notatrimestral);
 
         System.out.println(analisaNota(notafinal));
 
+    }
+
+    public static double[] getDados(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite quanto tirou na prova parcial");
+        double notaparcial = sc.nextDouble();
+        System.out.println("Digite quanto tirou na prova trimestral");
+        double notatrimestral = sc.nextDouble();
+
         sc.close();
+        return new double[] {notaparcial, notatrimestral};
     }
 
     public static double calculaNota(double parcial, double trimestral){
